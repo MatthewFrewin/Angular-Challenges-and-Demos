@@ -2,6 +2,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+
 interface Todo {
   text: string;
   completed: boolean;
@@ -10,13 +16,21 @@ interface Todo {
 @Component({
   selector: 'app-todo',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatListModule,
+    MatIconModule
+  ],
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent {
   newTodo: string = ''; // Input field for new todo
-  todos: Todo[] = []; // Array to hold the list of todos
+  todos: Todo[] = []; // Array to hold the list of todo
 
   // Add a new todo to the list
   addTodo() {
